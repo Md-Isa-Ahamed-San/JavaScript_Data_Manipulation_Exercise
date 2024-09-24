@@ -16,3 +16,12 @@ const filteredObj = items.reduce((acc, item) => {
   return acc;
 }, {});
 console.log(filteredObj);
+
+// **Expected Output:**
+
+// javascript
+// {
+//   A: ['img1.jpg', 'img2.jpg', 'img4.jpg'],
+//   B: ['img3.jpg', 'img7.jpg'],
+//   C: ['img5.jpg', 'img6.jpg']
+// }
