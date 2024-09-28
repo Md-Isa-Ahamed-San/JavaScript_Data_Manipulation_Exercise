@@ -18,8 +18,8 @@ const result2 = sales.reduce((acc, { productId, quantity }) => {
       acc[productId] = (acc[productId] || 0) + quantity;
     }
     return acc;
-  }, {});
-  console.log("🚀 ~ result2 ~ result2:", result2);
+}, {});
+console.log("🚀 ~ result2 ~ result2:", result2);
 
 //* good
 const obj = {};

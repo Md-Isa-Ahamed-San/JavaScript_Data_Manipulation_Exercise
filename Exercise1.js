@@ -15,7 +15,7 @@ const filteredObj = items.reduce((acc, item) => {
   }
   return acc;
 }, {});
-console.log(filteredObj);
+// console.log(filteredObj);
 
 // **Expected Output:**
 
@@ -25,3 +25,21 @@ console.log(filteredObj);
 //   B: ['img3.jpg', 'img7.jpg'],
 //   C: ['img5.jpg', 'img6.jpg']
 // }
+
+
+const map = new Map();
+
+items.forEach(item => {
+  if (map.has(item.categoryId)) {
+    const existingImages = map.get(item.categoryId);
+    // Merge and deduplicate images using Set
+    map.set(item.categoryId, [...new Set([...existingImages, ...item.images])]);
+  } else {
+    map.set(item.categoryId, [...item.images]);
+  }
+});
+
+// Convert the Map back to an object (optional)
+// const result = Object.fromEntries(map);
+
+console.log(map);
